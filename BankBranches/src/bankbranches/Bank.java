@@ -21,7 +21,7 @@ public class Bank {
                 return i;//Estoy regresando un apuntador a una posicion original del Array
             }
         }
-         return -1;//Regresa -1 (no hay posicion -1)o
+         return -1;//Regresa -1 (no hay posicion -1)of
     }
     public boolean addBranch(String name){//Añade un contacto
         if(findBranch(name) == -1){//Si regresa -1 se añade el contacto ya que no existe

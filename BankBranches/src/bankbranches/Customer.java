@@ -28,7 +28,7 @@ public class Customer {
         return true;
     }
 
-    @Override//o
+    @Override//of
     public String toString() {
         return "{" + name + '}';
     }

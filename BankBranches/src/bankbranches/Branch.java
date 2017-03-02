@@ -25,7 +25,7 @@ public class Branch {
     }
     
     public int findCustomer(String name){
-         for(int i = 0; i<customers.size(); i++){//Mientras que i sea menor al tamaño del arraylisto
+         for(int i = 0; i<customers.size(); i++){//Mientras que i sea menor al tamaño del arraylistof
             if(customers.get(i).getName().equals(name)){//Si el nombre del contacto en la posicion es igual al nombre
                 return i;//Estoy regresando un apuntador a una posicion original del Array
             }
