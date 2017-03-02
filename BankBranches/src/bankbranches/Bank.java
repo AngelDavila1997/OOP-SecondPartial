@@ -26,29 +26,46 @@ public class Bank {
     public boolean addBranch(String name){//Añade un contacto
         if(findBranch(name) == -1){//Si regresa -1 se añade el contacto ya que no existe
             branches.add(new Branch(name));
+            System.out.println("Branch *" + name + "* created.");
             return true;
         }
+        System.out.println("Branch already exists.");
         return false;
     }
     public boolean addCustomer(String branchName, String customerName, double transaction){
         int pos = findBranch(branchName);
         if(pos == -1){
+            System.out.println("Branch *" + branchName + "* does not exist.");
             return false;
         }
         branches.get(pos).addCustomer(customerName, transaction);
         return true;
     }
-    public boolean addTransaction(String branchName, Customer customer, double transaction){
+    public boolean addTransaction(String branchName, String customerName, double transaction){
         int pos = findBranch(branchName);
-        if(pos == -1){
-            return false;
+            if(pos == -1){
+               return false;
+        } else {
+            if(branches.get(pos).findCustomer(customerName) != -1){
+                 branches.get(pos).addTransaction(customerName , transaction);
+                }
+                return true;
         }
-        branches.get(pos).addTransaction(customer.getName(), transaction);
-        return true;
     }
 
-    public String toString(Branch branch) {
-        return branch.toString();
-    }//
+    public String customersList(String branchName) {
+        int pos = findBranch(branchName);
+        String result = "";
+        if(pos != -1){
+           result += branches.get(pos).getName() + ":\n";
+            ArrayList<Customer> branchCustomers = branches.get(pos).getCustomers();
+            for(int i = 0; i < branchCustomers.size(); i++){
+                Customer customer = branchCustomers.get(i);
+               result += "Name:" + customer.getName() + "\n";
+            }
+            return result;
+        }
+        return "";
+    }
     
 }

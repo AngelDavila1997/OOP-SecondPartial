@@ -23,6 +23,9 @@ public class Branch {
     public String getName() {
         return name;
     }
+    public ArrayList<Customer> getCustomers(){
+        return customers;
+    }
     
     public int findCustomer(String name){
          for(int i = 0; i<customers.size(); i++){//Mientras que i sea menor al tamaño del arraylist
@@ -35,8 +38,10 @@ public class Branch {
     public boolean addCustomer(String name, double transaction){//Añade un contacto
         if(findCustomer(name) == -1){//Si regresa -1 se añade el contacto ya que no existe
             customers.add(new Customer(name , transaction));
+            System.out.println("Customer *" + name + "* registered. Initial amount = " + transaction);
             return true;
         }
+        System.out.println("Customer *" + name + "* already exists.");
         return false;
     }
     public boolean addTransaction(String name, double transaction){
@@ -46,11 +51,6 @@ public class Branch {
         }
         customers.get(pos).addTransaction(transaction);
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return name + " (" + customers.toString() + ')';
     }
     
 }

@@ -23,15 +23,11 @@ public class Customer {
     public String getName() {
         return name;
     }
-    public boolean addTransaction(double transaction){
+    public void addTransaction(double transaction){
         transactions.add(transaction);
-        return true;
     }
-
-    @Override
-    public String toString() {
-        return "{" + name + '}';
+    public ArrayList<Double> getTransaction(){
+        return transactions;
     }
-    
     
 }
