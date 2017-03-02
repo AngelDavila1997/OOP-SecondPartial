@@ -30,7 +30,7 @@ public class Branch {
                 return i;//Estoy regresando un apuntador a una posicion original del Array
             }
         }
-         return -1;//Regresa -1 (no hay posicion -1)
+         return -1;//Regresa -1 (no hay posicion -1)//
     }
     public boolean addCustomer(String name, double transaction){//Añade un contacto
         if(findCustomer(name) == -1){//Si regresa -1 se añade el contacto ya que no existe
