@@ -23,9 +23,9 @@ public class Customer {
     public String getName() {
         return name;
     }
-    public void addTransaction(double transaction){
+    public void addTransaction(double transaction){ //Añade a el arraylist de transactions una transaccion nueva
         transactions.add(transaction);
-        System.out.println("Transaction made.");
+        System.out.println("Transaction made: " + transaction + " added.");
     }
     public ArrayList<Double> getTransaction(){
         return transactions;

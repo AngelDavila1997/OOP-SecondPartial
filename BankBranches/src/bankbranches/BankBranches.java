@@ -33,7 +33,7 @@ public static int menu(){ //Muestra un menu para darle al usuario opciones
         System.out.println("3. Add transaction");
         System.out.println("4. Print customer list");
         option=keyboard.nextInt();
-         }while (option < 0 || option >= 5); //Mientras que la opcion ingresada sea menor que 0 O mayor igual a 7
+         }while (option < 0 || option >= 5); //Mientras que la opcion ingresada sea menor que 0 O mayor igual a 5
                                            // seguira mostrando el menu
         return option;
     }   
