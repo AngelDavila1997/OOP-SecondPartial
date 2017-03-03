@@ -42,7 +42,7 @@ public static void options(int option, Bank bank){  //Un switch que permite real
       double transaction;
          switch(option){ //Seleccion multiple
             case 1://Añade sucursal
-                System.out.println("***Add brancht***");
+                System.out.println("***Add branch***");
                     branchName = getString("Branch name:");
                     bank.addBranch(branchName);
                 break;
@@ -71,13 +71,14 @@ public static void options(int option, Bank bank){  //Un switch que permite real
                     System.out.println("2. Print customer list with transactions");
                     op=keyboard.nextInt();
                     }while (op < 0 || op >= 3);
-                    branchName = getString("Branch name");
                             switch (op) {
                                 case 1:
-                                    bank.customersList(branchName);
+                                    branchName = getString("Branch name");
+                                    System.out.println(bank.customersList(branchName));
                                     break;
                                 case 2:
-                                    bank.customersTransactionList(branchName);
+                                    branchName = getString("Branch name");
+                                    System.out.println(bank.customersTransactionList(branchName));
                                     break;
                                 default:
                                     exit();
