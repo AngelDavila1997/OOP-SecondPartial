@@ -47,6 +47,7 @@ public class Branch {
     public boolean addTransaction(String name, double transaction){
         int pos = findCustomer(name);
         if(pos == -1){
+            System.out.println("Customer *" + name + "* does not exist.");
             return false;
         }
         customers.get(pos).addTransaction(transaction);

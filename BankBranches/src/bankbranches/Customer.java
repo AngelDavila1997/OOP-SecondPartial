@@ -25,6 +25,7 @@ public class Customer {
     }
     public void addTransaction(double transaction){
         transactions.add(transaction);
+        System.out.println("Transaction made.");
     }
     public ArrayList<Double> getTransaction(){
         return transactions;

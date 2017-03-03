@@ -44,11 +44,10 @@ public class Bank {
     public boolean addTransaction(String branchName, String customerName, double transaction){
         int pos = findBranch(branchName);
             if(pos == -1){
+                System.out.println("Branch *" + branchName + "* does not exist.");
                return false;
         } else {
-            if(branches.get(pos).findCustomer(customerName) != -1){
                  branches.get(pos).addTransaction(customerName , transaction);
-                }
                 return true;
         }
     }
@@ -67,5 +66,22 @@ public class Bank {
         }
         return "";
     }
-    
+    public String customersTransactionList(String branchName) {
+        int pos = findBranch(branchName);
+        String result = "";
+        if(pos != -1){
+           result += branches.get(pos).getName() + ":\n";
+            ArrayList<Customer> branchCustomers = branches.get(pos).getCustomers();
+            for(int i = 0; i < branchCustomers.size(); i++){
+                Customer customer = branchCustomers.get(i);
+                result += "Name:" + customer.getName() + "\n";
+                    ArrayList<Double> transactions = customer.getTransaction();
+                        for(int j = 0; j < transactions.size(); j++){
+                            result += "No." + (j+1) + ":" + transactions.get(j) + "\n";
+                        }
+            }
+            return result;
+        }
+        return "";
+    }
 }
