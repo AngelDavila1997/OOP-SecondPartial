@@ -27,7 +27,7 @@ public class HandyPerson extends Human implements Plumber, Electrician{
 
     @Override
     public String toString() {
-        return "HandyPerson{" + name + '}';
+        return "HandyPerson{" + super.toString() + '}';
     }
     
     

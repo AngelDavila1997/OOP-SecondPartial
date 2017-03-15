@@ -17,7 +17,7 @@ public class NobodySpecial extends Human{
 
     @Override
     public String toString() {
-        return "NobodySpecial{" + name + '}';
+        return "NobodySpecial{" + super.toString() + '}';
     }
     
 }
